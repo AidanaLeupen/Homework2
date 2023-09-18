@@ -3,17 +3,18 @@
 # чтобы все монетки были повернуты вверх одной и той же стороной.
 # Выведите минимальное количество монет, которые нужно перевернуть
 
-def минимальное_число_переворотов(последовательность):
-    герб = 0  # Счетчик гербов
-    решка = 0  # Счетчик решек
+def minimum_number_of_turns(sequence):
+    emblem = 0
+    tails = 0
 
-    for монетка in последовательность:
-        if монетка == 'Г':
-            герб += 1
+    for coin in sequence:
+        if coin == 'Г':
+            emblem += 1
         else:
-            решка += 1
-    return min(герб, решка)
+            tails += 1
+    return min(emblem, tails)
 
-последовательность = input("Введите последовательность монеток (Г - герб, Р - решка): ")
-результат = минимальное_число_переворотов(последовательность)
-print(f"Минимальное количество переворотов: {результат}")
+sequence = input("Enter the sequence of coins (E - emblem, T - tails): ")
+result = minimum_number_of_turns(sequence)
+print(f"Minimum number of turns: {result}")
+
